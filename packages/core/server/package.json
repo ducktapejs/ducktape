@@ -1,6 +1,6 @@
 {
   "name": "@ducktapejs/server",
-  "version": "1.0.0-alpha.5",
+  "version": "1.0.0-alpha.6",
   "repository": {
     "type": "git",
     "url": "https://github.com/ducktapejs/ducktape.git"
@@ -18,5 +18,5 @@
     "@types/express": "4.11.1",
     "@types/inquirer": "6.5.0"
   },
-  "gitHead": "2845183c73244ef8757fc9851f75781df7bd1e36"
+  "gitHead": "c902eb6a74769653e3572fd0bae4f8f8f8ab163c"
 }
