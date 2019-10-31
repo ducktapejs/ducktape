@@ -1,4 +1,4 @@
-import { Client, HookInput } from '@morten-olsen/ducktape-server';
+import { Client, HookInput } from '@ducktapejs/server';
 
 type Listener = <Type = any>(evt: HookInput<Type>) => void;
 

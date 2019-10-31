@@ -1,4 +1,4 @@
-import { Client } from '@morten-olsen/ducktape-server';
+import { Client } from '@ducktapejs/server';
 import axios from 'axios';
 import jwt from 'jsonwebtoken';
 

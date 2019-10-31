@@ -1,6 +1,6 @@
 import express from 'express';
 import Octokit from '@octokit/rest';
-import { ClientApi } from '@morten-olsen/ducktape-server';
+import { ClientApi } from '@ducktapejs/server';
 import { createResolvable } from '../utils/promsie';
 import createManifest from './manifest';
 import redirect from './redirect';

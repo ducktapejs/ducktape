@@ -1,13 +1,13 @@
 {
-  "name": "@morten-olsen/ducktape-integration-appstore-connect",
+  "name": "@ducktapejs/integration-appstore-connect",
   "version": "1.0.0-alpha.3",
   "main": "dist/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/morten-olsen/ducktape.git"
+    "url": "https://github.com/ducktapejs/ducktape.git"
   },
   "dependencies": {
-    "@morten-olsen/ducktape-server": "^1.0.0-alpha.3",
+    "@ducktapejs/server": "^1.0.0-alpha.3",
     "axios": "0.19.0",
     "jsonwebtoken": "8.5.1"
   },

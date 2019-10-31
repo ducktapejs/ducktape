@@ -1,13 +1,13 @@
 {
-  "name": "@morten-olsen/ducktape-integration-azure-devops",
+  "name": "@ducktapejs/integration-azure-devops",
   "version": "1.0.0-alpha.3",
   "main": "dist/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/morten-olsen/ducktape.git"
+    "url": "https://github.com/ducktapejs/ducktape.git"
   },
   "dependencies": {
-    "@morten-olsen/ducktape-server": "^1.0.0-alpha.3",
+    "@ducktapejs/server": "^1.0.0-alpha.3",
     "azure-devops-node-api": "9.0.1"
   }
 }

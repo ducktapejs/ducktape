@@ -1,5 +1,5 @@
 import './types';
-import { Client as DucktapeClient } from '@morten-olsen/ducktape-server';
+import { Client as DucktapeClient } from '@ducktapejs/server';
 import Client, { Config } from './Client';
 import Octokit from '@octokit/rest';
 import WebhooksApi from '@octokit/webhooks';

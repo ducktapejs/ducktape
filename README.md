@@ -5,33 +5,33 @@ A platform for sticking different platforms together
 ## Supported platforms:
 
 **Fully supported**
-* Github `@morten-olsen/ducktape-integration-github`
-* Cron `@morten-olsen/ducktape-integration-cron`
-* Webhook `@morten-olsen/ducktape-integration-webhook`
-* Azure DevOps `@morten-olsen/ducktape-integration-azure-devops`
-* Slack `@morten-olsen/ducktape-integration-slack`
+* Github `@ducktapejs/integration-github`
+* Cron `@ducktapejs/integration-cron`
+* Webhook `@ducktapejs/integration-webhook`
+* Azure DevOps `@ducktapejs/integration-azure-devops`
+* Slack `@ducktapejs/integration-slack`
 
 **Work in progress**
-* AppStore Connect `@morten-olsen/ducktape-integration-appstore-connect`
-* Jira `@morten-olsen/ducktape-integration-jira`
+* AppStore Connect `@ducktapejs/integration-appstore-connect`
+* Jira `@ducktapejs/integration-jira`
 
 **Planned**
 * Pushover
-* Bitrise `@morten-olsen/ducktape-integration-bitrise`
-* Google Play Store `@morten-olsen/ducktape-integration-google-play-store`
+* Bitrise `@ducktapejs/integration-bitrise`
+* Google Play Store `@ducktapejs/integration-google-play-store`
 
 
 ## Quick start
 
-Create a new npm project and install `@morten-olsen/ducktape-server` as well as any integrations you want, for instance `@morten-olsen/ducktape-integration-github`
+Create a new npm project and install `@ducktapejs/server` as well as any integrations you want, for instance `@ducktapejs/integration-github`
 
 The easiest way to create a server is to use the provided `createBin` function to create a cli application
 
 ```typescript
 #!/usr/bin/env node
 
-import { createBin } from '@morten-olsen/ducktape-server';
-import Github from '@morten-olsen/ducktape-integration-github';
+import { createBin } from '@ducktapejs/server';
+import Github from '@ducktapejs/integration-github';
 
 createBin({
   url: 'localhost:3000',
@@ -58,4 +58,4 @@ For a project example look at `packages/core/demo`
 
 ## Bundling
 
-To bundle your new server into a single JS file you can use `@morten-olsen/ducktape-bundler` to run `ducktape-bundler bundle your/file.ts` which will create a `bundle/bundle.js` file
+To bundle your new server into a single JS file you can use `@ducktapejs/bundler` to run `ducktape-bundler bundle your/file.ts` which will create a `bundle/bundle.js` file

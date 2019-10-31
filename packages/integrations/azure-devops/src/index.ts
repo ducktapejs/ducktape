@@ -1,4 +1,4 @@
-import { Client } from '@morten-olsen/ducktape-server';
+import { Client } from '@ducktapejs/server';
 import * as azdev from "azure-devops-node-api";
 
 export type ConfigType = {

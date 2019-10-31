@@ -1,4 +1,4 @@
-import { Client } from '@morten-olsen/ducktape-server';
+import { Client } from '@ducktapejs/server';
 import { WebClient } from '@slack/web-api';
 import { RTMClient } from '@slack/rtm-api';
 

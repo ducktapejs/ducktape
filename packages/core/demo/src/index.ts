@@ -1,6 +1,6 @@
 import ngrok from 'ngrok';
-import { createBin, ConfigStore } from '@morten-olsen/ducktape-server';
-import Github from '@morten-olsen/ducktape-integration-github';
+import { createBin, ConfigStore } from '@ducktapejs/server';
+import Github from '@ducktapejs/integration-github';
 import code from './code'
 
 const ngrokConfig = require('../secrets/config.js');

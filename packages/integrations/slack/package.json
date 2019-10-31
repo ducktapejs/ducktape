@@ -1,13 +1,13 @@
 {
-  "name": "@morten-olsen/ducktape-integration-slack",
+  "name": "@ducktapejs/integration-slack",
   "version": "1.0.0-alpha.3",
   "main": "dist/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/morten-olsen/ducktape.git"
+    "url": "https://github.com/ducktapejs/ducktape.git"
   },
   "dependencies": {
-    "@morten-olsen/ducktape-server": "^1.0.0-alpha.3",
+    "@ducktapejs/server": "^1.0.0-alpha.3",
     "@slack/rtm-api": "5.0.3",
     "@slack/web-api": "5.3.0"
   }

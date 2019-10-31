@@ -1,4 +1,4 @@
-import { Client } from '@morten-olsen/ducktape-server';
+import { Client } from '@ducktapejs/server';
 
 class DummyClient extends Client {
   async healthCheck() {
