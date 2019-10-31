@@ -1,7 +1,7 @@
 {
   "name": "@ducktapejs/demo",
   "private": true,
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-alpha.5",
   "main": "dist/index.ts",
   "scripts": {
     "dev": "ts-node src/index.ts start",
@@ -9,9 +9,9 @@
     "bundle": "ducktape-bundler bundle src/index.ts"
   },
   "dependencies": {
-    "@ducktapejs/bundler": "^1.0.0-alpha.4",
-    "@ducktapejs/integration-github": "^1.0.0-alpha.4",
-    "@ducktapejs/server": "^1.0.0-alpha.4",
+    "@ducktapejs/bundler": "^1.0.0-alpha.5",
+    "@ducktapejs/integration-github": "^1.0.0-alpha.5",
+    "@ducktapejs/server": "^1.0.0-alpha.5",
     "ngrok": "3.2.5"
   }
 }

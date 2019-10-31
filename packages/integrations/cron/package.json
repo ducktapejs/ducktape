@@ -1,16 +1,17 @@
 {
   "name": "@ducktapejs/integration-cron",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-alpha.5",
   "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/ducktapejs/ducktape.git"
   },
   "dependencies": {
-    "@ducktapejs/server": "^1.0.0-alpha.4",
+    "@ducktapejs/server": "^1.0.0-alpha.5",
     "node-cron": "2.0.3"
   },
   "devDependencies": {
     "@types/node-cron": "1.2.0"
-  }
+  },
+  "gitHead": "2845183c73244ef8757fc9851f75781df7bd1e36"
 }
