@@ -1,13 +1,13 @@
 {
   "name": "@ducktapejs/integration-google-play-store",
-  "version": "1.0.0-alpha.6",
+  "version": "1.0.0-alpha.7",
   "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/ducktapejs/ducktape.git"
   },
   "dependencies": {
-    "@ducktapejs/server": "^1.0.0-alpha.6"
+    "@ducktapejs/server": "^1.0.0-alpha.7"
   },
   "gitHead": "c902eb6a74769653e3572fd0bae4f8f8f8ab163c"
 }
