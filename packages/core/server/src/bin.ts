@@ -1,7 +1,12 @@
 import commander from 'commander';
+import express, { Express } from 'express';
 import Config from "./Config";
 import Client from "./Client";
 import setup from './setup';
+
+export type RunApi = {
+  app: Express;
+};
 
 const handle = (fn: (...args: any[]) => Promise<void>) => (...args: any[]) => {
   fn(...args)
@@ -11,15 +16,19 @@ const handle = (fn: (...args: any[]) => Promise<void>) => (...args: any[]) => {
     });
 }
 
-const createBin = async <T extends {[name: string]: Client}>(config: Config<T>, run: (clients: T) => Promise<void>) => {
+const createBin = async <T extends {[name: string]: Client}>(config: Config<T>, run: (clients: T, api: RunApi) => Promise<void>) => {
   const { getClients, getServer } = setup(config);
   await config.configStore.load();
 
   const start = async () => {
     const server = await getServer();
+    const app = express();
+    server.app.use('/custom', app);
     await server.start();
     const clients = await getClients();
-    await run(clients);
+    await run(clients, {
+      app,
+    });
   }
 
   const createConfig = async () => {

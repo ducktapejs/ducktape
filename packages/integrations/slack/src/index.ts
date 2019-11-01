@@ -1,6 +1,7 @@
 import { Client } from '@ducktapejs/server';
-import { WebClient } from '@slack/web-api';
+import { WebClient, WebAPICallResult } from '@slack/web-api';
 import { RTMClient } from '@slack/rtm-api';
+import Channel from './types/Channel';
 
 export type ConfigType = {
   token: string;
@@ -41,6 +42,16 @@ class SlackClient extends Client<ConfigType> {
       throw new Error('Realtime not initialized');
     }
     return this._realtime;
+  }
+
+  async getChannels() {
+    const { channels } = await this.api.channels.list() as WebAPICallResult & { channels: Channel[] };
+    return channels;
+  }
+
+  async getChannel(name: string) {
+    const channels = await this.getChannels();
+    return channels.find(c => c.name === name);
   }
 }
 

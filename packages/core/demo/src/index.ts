@@ -1,31 +1,29 @@
-import ngrok from 'ngrok';
-import { createBin, ConfigStore } from '@ducktapejs/server';
+import { createBin, ConfigStore, RunApi } from '@ducktapejs/server';
 import Github from '@ducktapejs/integration-github';
-import code from './code'
-
-const ngrokConfig = require('../secrets/config.js');
-const config = new ConfigStore();
+import Slack from '@ducktapejs/integration-slack';
+import code from './code';
 
 const clients = {
   github: new Github(),
+  slack: new Slack(),
 };
 
-const start = async () => {
-  const url = await ngrok.connect({
-    authtoken: ngrokConfig.ngrok.authToken,
-    subdomain: ngrokConfig.ngrok.subdomain,
-    region: ngrokConfig.ngrok.region,
-    addr: 5007,
-  });
+const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 5000;
+const url = process.env.URL || `http://localhost:${port}`;
+const configStore = new ConfigStore(process.env.CONFIG_LOCATION);
 
+const start = async () => {
   await createBin({
-    port: 5007,
+    port,
     url,
-    configStore: config,
+    configStore,
     clients,
   }, code);
 };
 
 start().catch(console.error);
 
-export type Clients = typeof clients;
+export type ClientsType = typeof clients;
+declare global {
+  type Script = (clients: ClientsType, api: RunApi) => Promise<void>
+}

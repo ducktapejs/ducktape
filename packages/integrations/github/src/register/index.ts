@@ -26,7 +26,7 @@ const register = (api: ClientApi) => async () => {
   return {
     appId: response.data.id,
     privateKey: response.data.pem,
-    secret,
+    secret: response.data.webhook_secret,
   };
 };
 

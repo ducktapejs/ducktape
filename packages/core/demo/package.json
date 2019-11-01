@@ -4,14 +4,22 @@
   "version": "1.0.0-alpha.6",
   "main": "dist/index.ts",
   "scripts": {
-    "dev": "ts-node src/index.ts start",
-    "create-config": "ts-node src/index.ts create-config",
+    "start": "ts-node src/index.ts",
+    "dev": "ts-node src/dev.ts start start",
+    "create-config": "ts-node src/dev.ts create-config",
     "bundle": "ducktape-bundler bundle src/index.ts"
   },
   "dependencies": {
     "@ducktapejs/bundler": "^1.0.0-alpha.6",
     "@ducktapejs/integration-github": "^1.0.0-alpha.6",
-    "@ducktapejs/server": "^1.0.0-alpha.6",
-    "ngrok": "3.2.5"
+    "@ducktapejs/integration-slack": "^1.0.0-alpha.6",
+    "@ducktapejs/server": "^1.0.0-alpha.6"
+  },
+  "devDependencies": {
+    "nodemon": "1.19.4",
+    "ngrok": "3.2.5",
+    "@types/dotenv": "8.2.0",
+    "@types/nodemon": "1.19.0",
+    "dotenv": "8.2.0"
   }
 }

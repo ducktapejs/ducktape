@@ -1,14 +1,13 @@
-import { Clients } from './index';
-
-const run = async ({ github }: Clients) => {
-  github.hooks.on('status', async (a) => {
-    const client = await github.getClient(
-      a.payload.repository.owner.login,
-      a.payload.repository.name,
-    );
-    const pulls = await client.pulls.list({
-      owner: a.payload.repository.owner.login,
-      repo: a.payload.repository.name,
+const run: Script = async ({ slack, github }) => {
+  const channel = await slack.getChannel('PRs');
+  if (!channel) {
+    throw new Error('Channel not found');
+  }
+  github.hooks.on('pull_request.opened', (info) => {
+    slack.api.chat.postMessage({
+      channel: channel.id,
+      text: `PR ${info.payload.pull_request.title} was opened`,
+      mrkdwn: true,
     });
   });
 };

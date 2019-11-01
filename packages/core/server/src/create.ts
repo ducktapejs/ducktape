@@ -21,6 +21,7 @@ const createClientConfig = async (name: string, client: Client, configStore: Con
   console.log(`\n\n--- configuring ${name} ---\n`);
   const newConfig = await client.createConfig(clientConfig);
   configStore.set(name, newConfig);
+  await configStore.save();
 };
 
 const create = async <T extends {[name: string]: Client}>(config: Config<T>) => {
@@ -59,7 +60,6 @@ const create = async <T extends {[name: string]: Client}>(config: Config<T>) => 
       await createClientConfig(name, client, config.configStore);
     }
     server.close();
-    await config.configStore.save();
     process.exit();
   }
 

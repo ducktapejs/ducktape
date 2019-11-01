@@ -11,8 +11,8 @@
   "scripts": {
     "prepublish": "yarn build",
     "postinstall": "lerna bootstrap",
-    "dev": "lerna run dev --stream --parallel",
-    "create-config": "lerna run create-config --stream --parallel",
+    "dev": "npm --prefix packages/core/demo run dev",
+    "create-config": "npm --prefix packages/core/demo run create-config",
     "watch": "tsc --build packages/project.json --watch",
     "build": "tsc --build packages/project.json",
     "test": "echo \"Error: no test specified\" && exit 1"

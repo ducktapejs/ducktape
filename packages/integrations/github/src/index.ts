@@ -13,6 +13,10 @@ class GithubClient extends DucktapeClient<Config> {
   
   async setup(config: Config) {
     this._client = new Client(config);
+    this._webhooks = new WebhooksApi({
+      secret: config.secret,
+    });
+    this.registerMiddleware({ name: 'hooks' }, this._webhooks.middleware);
   }
 
   get hooks() {

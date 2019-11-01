@@ -1,9 +1,9 @@
 import { Client, HookInput } from '@ducktapejs/server';
 
-type Listener = <Type = any>(evt: HookInput<Type>) => void;
+type Listener<Type = any> = (evt: HookInput<Type>) => void;
 
-class WebhookClient extends Client {
-  private _listeners: Listener[] = [];
+class WebhookClient<PostType> extends Client {
+  private _listeners: Listener<PostType>[] = [];
   private _url?: string;
 
   async healthCheck() {
@@ -39,4 +39,4 @@ class WebhookClient extends Client {
   }
 }
 
-export default DummyClient;
+export default WebhookClient;
