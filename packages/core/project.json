@@ -4,5 +4,7 @@
     "path": "./server/tsconfig.json"
   }, {
     "path": "./bundler/tsconfig.json"
+  }, {
+    "path": "./test-utils/tsconfig.json"
   }]
 }

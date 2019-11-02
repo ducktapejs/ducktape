@@ -53,12 +53,16 @@ const create = async <T extends {[name: string]: Client}>(config: Config<T>) => 
   app.use('/services', services);
   app.use('/api', api(clients));
 
-  const start = () => new Promise(async (resolve) => {
+  const setupClients = async () => {
     await Promise.all(clientNames.map(name => {
       const client = clients[name];
       const clientConfig = config.configStore.get(name);
       client.setup(clientConfig);
     }));
+  }
+
+  const start = () => new Promise(async (resolve) => {
+    await setupClients();
     app.listen(config.port, () => {
       resolve();
     });
@@ -78,6 +82,7 @@ const create = async <T extends {[name: string]: Client}>(config: Config<T>) => 
     app,
     start,
     createConfig,
+    setupClients,
     clients,
   }
 };

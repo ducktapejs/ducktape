@@ -12,10 +12,11 @@
     "prepublish": "yarn build",
     "postinstall": "lerna bootstrap",
     "dev": "npm --prefix packages/core/demo run dev",
+    "script": "npm --prefix packages/core/demo run script",
     "create-config": "npm --prefix packages/core/demo run create-config",
     "watch": "tsc --build packages/project.json --watch",
     "build": "tsc --build packages/project.json",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +25,9 @@
     "@types/express": "^4.17.1",
     "lerna": "^3.18.3",
     "ts-node": "^8.4.1",
-    "typescript": "^3.6.4"
+    "typescript": "^3.6.4",
+    "jest": "24.9.0",
+    "ts-jest": "24.1.0",
+    "@types/jest": "22.2.3"
   }
 }

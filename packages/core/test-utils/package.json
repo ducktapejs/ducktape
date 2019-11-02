@@ -1,0 +1,20 @@
+{
+  "name": "@ducktapejs/test-utils",
+  "version": "1.0.0-alpha.8",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ducktapejs/ducktape.git"
+  },
+  "main": "dist/index.js",
+  "bin": {
+    "ducktape-bundler": "dist/bin.js"
+  },
+  "dependencies": {
+    "@ducktapejs/server": "1.0.0-alpha.8",
+    "express": "4.17.1"
+  },
+  "devDependencies": {
+    "@types/express": "4.11.1"
+  },
+  "gitHead": "c902eb6a74769653e3572fd0bae4f8f8f8ab163c"
+}
