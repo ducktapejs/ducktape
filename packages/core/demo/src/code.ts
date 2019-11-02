@@ -1,5 +1,6 @@
 const run: Script = async ({ slack, github }) => {
-  const channel = await slack.getChannel('PRs');
+  console.log('started');
+  /*const channel = await slack.getChannel('PRs');
   if (!channel) {
     throw new Error('Channel not found');
   }
@@ -9,7 +10,7 @@ const run: Script = async ({ slack, github }) => {
       text: `PR ${info.payload.pull_request.title} was opened`,
       mrkdwn: true,
     });
-  });
+  });*/
 };
 
 export default run;

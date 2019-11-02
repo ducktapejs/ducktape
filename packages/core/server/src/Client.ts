@@ -1,5 +1,6 @@
-import { Express, RequestHandler } from 'express';
+import { Express, RequestHandler, Response, Request } from 'express';
 import inquirer from 'inquirer';
+import createSession from './security/session';
 
 export type HookOptions = {
   name: string;
@@ -7,8 +8,10 @@ export type HookOptions = {
 };
 
 export type CoreSetup = {
+  name: string;
   server: Express;
   url: string;
+  session: ReturnType<typeof createSession>;
 }
 
 export type HookInput<Type> = {
@@ -88,6 +91,10 @@ abstract class Client<ConfigType = any> implements ClientApi {
     })
     return url;
   }
+
+  getUser?: (data: any) => Promise<any>;
+  getLoginUrl?: (redirectUrl: string, stateId?: string) => string
+  onLoginCompleted?: (req: Request, res: Response) => Promise<any>
 }
 
 export default Client;

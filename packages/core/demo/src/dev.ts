@@ -12,8 +12,6 @@ const start = async () => {
     addr: 5006,
   });
 
-  console.log('foo', args);
-
   nodemon({
     exec: `yarn start ${args.join(' ')}`,
     ext: 'ts',

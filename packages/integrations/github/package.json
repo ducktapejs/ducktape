@@ -9,6 +9,7 @@
   "dependencies": {
     "@ducktapejs/server": "^1.0.0-alpha.7",
     "@octokit/app": "4.1.0",
+    "@octokit/auth-oauth-app": "2.1.0",
     "@octokit/request": "5.3.0",
     "@octokit/rest": "16.34.0",
     "@octokit/webhooks": "6.3.2",

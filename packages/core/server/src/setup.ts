@@ -1,6 +1,6 @@
 import Client from './Client';
 import Config from './Config';
-import create from './create';
+import create from './createServer';
 
 const setup = <T extends {[name: string]: Client}>(config: Config<T>) => {
   const serverPromise = (async () => {

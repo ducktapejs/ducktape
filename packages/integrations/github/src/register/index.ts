@@ -4,11 +4,11 @@ import { ClientApi } from '@ducktapejs/server';
 import { createResolvable } from '../utils/promsie';
 import createManifest from './manifest';
 import redirect from './redirect';
+import { Config } from '../Client';
 
-const register = (api: ClientApi) => async () => {
+const register = (api: ClientApi) => async (): Promise<Config> => {
   const setupClient = new Octokit();
   const app = express();
-  const secret = 'foo';
   const hookUrl = api.registerHook({ name: 'hooks' }, async () => {});
   const setupUrl = api.registerMiddleware({ name: 'setup' }, app); 
   const codePromise = createResolvable<string>();
@@ -23,11 +23,14 @@ const register = (api: ClientApi) => async () => {
   console.log(`Go to ${setupUrl}/register to complete app setup`);
   const code = await codePromise;
   const response = await setupClient.apps.createFromManifest({ code });
-  return {
+  const config = {
     appId: response.data.id,
     privateKey: response.data.pem,
     secret: response.data.webhook_secret,
+    clientId: response.data.client_id,
+    clientSecret: response.data.client_secret,
   };
+  return config;
 };
 
 export default register;

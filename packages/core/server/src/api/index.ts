@@ -1,10 +1,15 @@
 import express from 'express';
 import Client from '../Client';
+import createSession from '../security/session';
 
 const create = (clients: {[name: string]: Client}) => {
   const app = express();
 
-  app.use('/status', async (req, res) => {
+  app.get('/user', (req, res) => {
+    res.json(req.user);
+  });
+
+  app.get('/status', async (req, res) => {
     const clientInfo = await Promise.all(Object.keys(clients).map(async (name) => {
       const client = clients[name];
       let status: boolean | Error;

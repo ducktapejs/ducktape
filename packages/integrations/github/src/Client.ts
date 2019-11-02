@@ -2,11 +2,12 @@ import { App } from '@octokit/app';
 import { request } from '@octokit/request';
 import Octokit from '@octokit/rest';
 
-
 type Config = {
   appId: number;
   secret: string;
   privateKey: string;
+  clientId: string;
+  clientSecret: string;
 }
 
 class Client {

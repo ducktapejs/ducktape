@@ -1,10 +1,12 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import cookieParser from 'cookie-parser';
 import Client from './Client';
 import Config from './Config';
 import api from './api';
 import inquirer from 'inquirer';
 import ConfigStore from './ConfigStore';
+import createSession from './security/session';
 
 const json = bodyParser.json();
 
@@ -28,6 +30,11 @@ const create = async <T extends {[name: string]: Client}>(config: Config<T>) => 
   const app = express();
   const services = express();
   const clients = config.clients;
+  const session = createSession(
+    `${config.url}/login-callback`,
+    clients,
+    config.sessionSecret || 'foo'
+  );
   const clientNames = Object.keys(clients);
   await Promise.all(clientNames.map(async (name) => {
     const service = express();
@@ -35,10 +42,14 @@ const create = async <T extends {[name: string]: Client}>(config: Config<T>) => 
     services.use(`/${name}`, service);
     const client = clients[name];
     client.setupCore({
+      name,
       server: service,
+      session,
       url: `${config.url}/services/${name}`,
     });
   }));
+  app.use(cookieParser());
+  app.use(session.middleware);
   app.use('/services', services);
   app.use('/api', api(clients));
 
