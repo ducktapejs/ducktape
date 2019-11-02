@@ -1,7 +1,7 @@
 {
   "name": "@ducktapejs/demo",
   "private": true,
-  "version": "1.0.0-alpha.7",
+  "version": "1.0.0-alpha.8",
   "main": "dist/index.ts",
   "scripts": {
     "start": "ts-node src/index.ts",
@@ -11,9 +11,9 @@
   },
   "dependencies": {
     "@ducktapejs/bundler": "^1.0.0-alpha.7",
-    "@ducktapejs/integration-github": "^1.0.0-alpha.7",
-    "@ducktapejs/integration-slack": "^1.0.0-alpha.7",
-    "@ducktapejs/server": "^1.0.0-alpha.7"
+    "@ducktapejs/integration-github": "^1.0.0-alpha.8",
+    "@ducktapejs/integration-slack": "^1.0.0-alpha.8",
+    "@ducktapejs/server": "^1.0.0-alpha.8"
   },
   "devDependencies": {
     "@types/dotenv": "8.2.0",

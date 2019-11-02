@@ -1,28 +1,28 @@
 {
   "name": "@ducktapejs/server",
-  "version": "1.0.0-alpha.7",
+  "version": "1.0.0-alpha.8",
   "repository": {
     "type": "git",
     "url": "https://github.com/ducktapejs/ducktape.git"
   },
   "main": "dist/index.js",
   "dependencies": {
-    "uuid": "3.3.3",
-    "cookie-parser": "1.4.4",
-    "jsonwebtoken": "8.5.1",
     "body-parser": "1.19.0",
     "commander": "3.0.2",
+    "cookie-parser": "1.4.4",
     "express": "4.17.1",
-    "inquirer": "7.0.0"
+    "inquirer": "7.0.0",
+    "jsonwebtoken": "8.5.1",
+    "uuid": "3.3.3"
   },
   "devDependencies": {
-    "@types/uuid": "3.4.6",
-    "@types/cookie-parser": "1.4.1",
-    "@types/jsonwebtoken": "7.2.7",
     "@types/body-parser": "1.17.0",
     "@types/commander": "2.12.2",
+    "@types/cookie-parser": "1.4.1",
     "@types/express": "4.11.1",
-    "@types/inquirer": "6.5.0"
+    "@types/inquirer": "6.5.0",
+    "@types/jsonwebtoken": "7.2.7",
+    "@types/uuid": "3.4.6"
   },
   "gitHead": "c902eb6a74769653e3572fd0bae4f8f8f8ab163c"
 }
