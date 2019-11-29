@@ -1,0 +1,22 @@
+{
+  "name": "@ducktapejs/dev-server",
+  "version": "1.0.0-alpha.9",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ducktapejs/ducktape.git"
+  },
+  "main": "dist/index.js",
+  "bin": {
+    "ducktape-dev-server": "./dist/bin.js"
+  },
+  "dependencies": {
+    "ngrok": "3.2.5",
+    "nodemon": "2.0.1",
+    "dotenv": "8.2.0"
+  },
+  "devDependencies": {
+    "@types/nodemon": "1.19.0",
+    "@types/dotenv": "8.2.0"
+  },
+  "gitHead": "c902eb6a74769653e3572fd0bae4f8f8f8ab163c"
+}
