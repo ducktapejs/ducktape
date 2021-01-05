@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@ducktapejs/server": "^1.0.0-alpha.9",
-    "axios": "0.19.0"
+    "axios": "0.21.1"
   },
   "gitHead": "c902eb6a74769653e3572fd0bae4f8f8f8ab163c"
 }
